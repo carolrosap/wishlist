@@ -1,0 +1,28 @@
+@import '../variables';
+.navbar {
+    border-radius: 0;
+    padding: 15px;
+    background-color: $color-primary;
+    color: $font-color-contrast;
+    font-size: $font-size;
+    font-family: $font-family-normal;
+    font-weight: bold;
+    border-top: 4px solid $color-primary-strong; 
+    &__options {
+        display: grid;
+        grid-template-columns:2fr 1fr 1fr 1fr;
+        align-items: end;
+
+        &--title {
+            font-size: $font-size-title;
+            font-family: $font-family-title;
+            font-weight: normal;
+        }
+
+        .material-icons {
+            font-size: 1rem;
+            margin-right: 1px;
+        }
+    } 
+
+}
