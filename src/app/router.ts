@@ -6,8 +6,6 @@ import path from "path";
 const express = require("express");
 const router: Router = Router();
 
-console.log(__dirname +'../styles')
-//Routes
 router.use('/css',express.static('public/css'))
 
 router.get("/", homeController.home);

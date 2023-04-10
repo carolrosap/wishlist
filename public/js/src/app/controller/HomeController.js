@@ -20,8 +20,9 @@ var HomeController = /** @class */ (function () {
     HomeController.prototype.home = function (req, res) {
         var pro = new Products_1.Products();
         pro.getProducts;
-        res.removeHeader('X-Content-Type-Options');
-        res.sendFile('home.html', { root: './src/app/view/' });
+        // res.removeHeader('X-Content-Type-Options')
+        // res.sendFile('home.html', {root: './src/app/view/'})
+        res.render("index");
     };
     return HomeController;
 }());

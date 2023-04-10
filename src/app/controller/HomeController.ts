@@ -22,9 +22,10 @@ class HomeController {
   public home(req: Request, res: Response) {
     let pro = new Products()
     pro.getProducts
-    res.removeHeader('X-Content-Type-Options')
+    // res.removeHeader('X-Content-Type-Options')
     
-    res.sendFile('home.html', {root: './src/app/view/'})
+    // res.sendFile('home.html', {root: './src/app/view/'})
+    res.render("index")
   }
 }
 

@@ -6,6 +6,10 @@ export class App{
 
   constructor(){
     this.server;
+    console.log(__dirname + '/views')
+    this.server.set('view engine', 'ejs');
+    this.server.set('views', __dirname + '/views');
+    
     this.middleware();
     this.router();
   }
