@@ -1,7 +1,7 @@
 @import '../variables';
 .navbar {
     border-radius: 0;
-    padding: 15px;
+    padding: 15px 30px 15px 30px;
     background-color: $color-primary;
     color: $font-color-contrast;
     font-size: $font-size;
@@ -12,17 +12,34 @@
         display: grid;
         grid-template-columns:2fr 1fr 1fr 1fr;
         align-items: end;
+        justify-items: end;
+        margin-bottom: 10px;
 
         &--title {
             font-size: $font-size-title;
             font-family: $font-family-title;
             font-weight: normal;
+            justify-self: start;
         }
 
-        .material-icons {
+        .options-icon {
             font-size: 1rem;
-            margin-right: 1px;
+            margin-right: 3px;
+        }
+
+        a {
+            color: $color-secondary;
         }
     } 
+
+    &__search {
+        display: grid;
+        align-items: end;
+        grid-template-columns: 2fr 2fr;
+
+        &--input {
+            grid-column: 2;
+        }
+    }
 
 }
