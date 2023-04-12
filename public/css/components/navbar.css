@@ -33,6 +33,18 @@
   align-items: end;
   grid-template-columns: 2fr 2fr;
 }
-.navbar__search--input {
+.navbar__search--group {
   grid-column: 2;
+}
+.navbar__search--addon {
+  background-color: white;
+}
+.navbar__search--input {
+  border-left: 0;
+  padding: 3px 8px 3px 3px;
+  font-size: 1rem;
+  box-shadow: none;
+}
+.navbar__search--input:hover {
+  box-shadow: none;
 }

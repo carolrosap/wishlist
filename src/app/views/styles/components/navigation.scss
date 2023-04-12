@@ -1,0 +1,10 @@
+@import '../variables.scss';
+.navigation {
+    margin-bottom: 15px;
+    
+    &__text {
+        font-family: $font-family-title;
+        font-size: 1.2rem;
+        color: $font-color-normal;
+    }
+}
