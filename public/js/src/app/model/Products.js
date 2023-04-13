@@ -39,15 +39,14 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Products = void 0;
+exports.products = exports.Products = void 0;
 var axios_1 = __importDefault(require("axios"));
 var Products = /** @class */ (function () {
     function Products() {
-        this.productsList = [];
     }
     Products.prototype.getProducts = function () {
         return __awaiter(this, void 0, void 0, function () {
-            var response, products, error_1;
+            var response, products_1, error_1;
             return __generator(this, function (_a) {
                 switch (_a.label) {
                     case 0:
@@ -55,13 +54,37 @@ var Products = /** @class */ (function () {
                         return [4 /*yield*/, axios_1.default.get('https://run.mocky.io/v3/66063904-d43c-49ed-9329-d69ad44b885e')];
                     case 1:
                         response = _a.sent();
-                        products = response.data.products.json();
-                        this.productsList = products;
-                        return [2 /*return*/, true];
+                        products_1 = response.data.products;
+                        return [2 /*return*/, products_1];
                     case 2:
                         error_1 = _a.sent();
-                        return [2 /*return*/, false];
+                        console.log('erro ao ler os dados');
+                        return [3 /*break*/, 3];
                     case 3: return [2 /*return*/];
+                }
+            });
+        });
+    };
+    Products.prototype.showProducts = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var prod, html;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.getProducts()];
+                    case 1:
+                        prod = _a.sent();
+                        html = '';
+                        prod.forEach(function (item) {
+                            var startHtml = '<div class="gridProducts__card">';
+                            startHtml += '<div class="gridProducts__card--favorite" data-id="' + item.id + '">';
+                            startHtml += '<img class="gridProducts__card--icon" src="icons/bookmark.svg" /></div>';
+                            startHtml += '<div class="gridProducts__card--infos">';
+                            html += startHtml + '<div class="gridProducts__card--image"><img class="product-img" src="' + item.image + '"/></div>';
+                            html += '<div class="gridProducts__card--description"><span>' + item.title + '</span></div>';
+                            html += '<div class="gridProducts__card--price"><span>R$' + item.price + '</span></div>';
+                            html += '</div></div>';
+                        });
+                        return [2 /*return*/, html];
                 }
             });
         });
@@ -69,3 +92,4 @@ var Products = /** @class */ (function () {
     return Products;
 }());
 exports.Products = Products;
+exports.products = new Products();

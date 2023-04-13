@@ -1,7 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.homeController = void 0;
-var Products_1 = require("../model/Products");
 var HomeController = /** @class */ (function () {
     function HomeController() {
     }
@@ -17,11 +16,20 @@ var HomeController = /** @class */ (function () {
     //     return res.status(500).json({ error: 'Erro ao acessar API' });
     //   }
     // }
+    // public loadProducts() {
+    //   let pro = new Products()
+    //   pro.getProducts
+    //   const div = document.getElementsByClassName('gridProducts')
+    //   console.log(div)
+    // }
+    // public async home( req: Request, res: Response) {
+    //   res.render("index",{
+    //     formatUpperCase,
+    //     formatLowerCase,
+    //     showProducts
+    //   })
+    // }
     HomeController.prototype.home = function (req, res) {
-        var pro = new Products_1.Products();
-        pro.getProducts;
-        // res.removeHeader('X-Content-Type-Options')
-        // res.sendFile('home.html', {root: './src/app/view/'})
         res.render("index");
     };
     return HomeController;
